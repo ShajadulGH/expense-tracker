@@ -28,7 +28,7 @@ function App() {
   ];
   return (
     <div>
-      <h2>Cost Tracker</h2>
+      <h2 className="title">Cost Tracker</h2>
       <CostItem
         costName={demoCostItem[0].costName}
         price={demoCostItem[0].price}
