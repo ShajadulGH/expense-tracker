@@ -1,4 +1,5 @@
 import Costs from "./Components/Costs/Costs";
+import Form from "./Components/Form/Form";
 
 const App = () => {
   const demoCostItem = [
@@ -29,7 +30,7 @@ const App = () => {
   ];
   return (
     <div>
-      <h2 className="title">Cost Tracker</h2>
+      <Form />
       <Costs items={demoCostItem} />
     </div>
   );
