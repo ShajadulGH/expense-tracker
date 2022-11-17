@@ -1,5 +1,6 @@
-import CostItem from "./Components/CostItem";
-function App() {
+import Costs from "./Components/Costs/Costs";
+
+const App = () => {
   const demoCostItem = [
     {
       id: 1,
@@ -29,28 +30,9 @@ function App() {
   return (
     <div>
       <h2 className="title">Cost Tracker</h2>
-      <CostItem
-        costName={demoCostItem[0].costName}
-        price={demoCostItem[0].price}
-        date={demoCostItem[0].date}
-      ></CostItem>
-      <CostItem
-        costName={demoCostItem[1].costName}
-        price={demoCostItem[1].price}
-        date={demoCostItem[1].date}
-      ></CostItem>
-      <CostItem
-        costName={demoCostItem[2].costName}
-        price={demoCostItem[2].price}
-        date={demoCostItem[2].date}
-      ></CostItem>
-      <CostItem
-        costName={demoCostItem[3].costName}
-        price={demoCostItem[3].price}
-        date={demoCostItem[3].date}
-      ></CostItem>
+      <Costs items={demoCostItem} />
     </div>
   );
-}
+};
 
 export default App;

@@ -2,10 +2,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   padding: 0.5rem;
   margin: 10px 10px 0 10px;
-  border-radius: 12px;
   background-color: #00ffdd;
   color: black;
   font-weight: bold;
