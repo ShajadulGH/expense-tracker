@@ -1,37 +1,64 @@
 import React, { useState } from "react";
 import "./FormDetails.css";
-const FormDetails = () => {
+const FormDetails = (props) => {
+  // const [enteredValue, setEnteredValue] = useState({
+  //   enteredText: "",
+  //   enteredAmount: "",
+  //   enteredDate: "",
+  // });
+  // const titleHandler = (event) => {
+  //   setEnteredValue((prev) => {
+  //     return { ...prev, enteredText: event.target.value };
+  //   });
+  //   console.log(enteredValue.enteredText);
+  // };
+
   const [enteredText, setEnteredText] = useState("");
   const titleHandler = (event) => {
     setEnteredText(event.target.value);
-    console.log(enteredText);
   };
 
   const [enteredAmount, setEnteredAmount] = useState("");
   const amountHandler = (event) => {
     setEnteredAmount(event.target.value);
-    console.log(enteredAmount);
   };
   const [enteredDate, setEnteredDate] = useState("");
   const dateHandler = (event) => {
     setEnteredDate(event.target.value);
-    console.log(enteredDate);
   };
-
+  const submitHandler = (event) => {
+    event.preventDefault();
+    const expenses = {
+      title: enteredText,
+      amount: enteredAmount,
+      date: enteredDate,
+    };
+    props.onStoreData(expenses);
+    setEnteredAmount("");
+    setEnteredDate("");
+    setEnteredText("");
+  };
   return (
-    <form>
+    <form onSubmit={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input onChange={titleHandler} type="text" />
+          <input value={enteredText} onChange={titleHandler} type="text" />
         </div>
         <div className="new-expense__control">
           <label>Amount</label>
-          <input onChange={amountHandler} type="number" min="10" step="10" />
+          <input
+            value={enteredAmount}
+            onChange={amountHandler}
+            type="number"
+            min="0.01"
+            step="0.01"
+          />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
           <input
+            value={enteredDate}
             onChange={dateHandler}
             type="date"
             min="2019-01-01"

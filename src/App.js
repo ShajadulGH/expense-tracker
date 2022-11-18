@@ -28,9 +28,15 @@ const App = () => {
       price: 1000000,
     },
   ];
+  const receivedData = (receivedData) => {
+    const storedCosts = {
+      ...receivedData,
+    };
+    console.log(storedCosts);
+  };
   return (
     <div>
-      <Form />
+      <Form onStoreCost={receivedData} />
       <Costs items={demoCostItem} />
     </div>
   );

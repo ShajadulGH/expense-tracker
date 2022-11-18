@@ -1,9 +1,15 @@
 import FormDetails from "./FormDetails";
 import "./Form.css";
-const Form = () => {
+const Form = (props) => {
+  const receivedData = (receivedData) => {
+    const storedData = {
+      ...receivedData,
+    };
+    props.onStoreCost(storedData);
+  };
   return (
     <div className="new-expense">
-      <FormDetails />
+      <FormDetails onStoreData={receivedData} />
     </div>
   );
 };
