@@ -1,8 +1,16 @@
 import CostItems from "./CostItem";
 import Card from "../UI/Card";
+import CostFilter from "./CostFilter";
+import { useState } from "react";
 const Costs = (props) => {
+  const [storedYear, setStoredYear] = useState("2020");
+  const getSelectedYear = (selectedYear) => {
+    setStoredYear(selectedYear);
+    console.log(storedYear);
+  };
   return (
     <Card className="cost">
+      <CostFilter selected={storedYear} getYear={getSelectedYear} />
       <CostItems
         costName={props.items[0].costName}
         price={props.items[0].price}
