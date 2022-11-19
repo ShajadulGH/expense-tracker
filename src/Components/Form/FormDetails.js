@@ -29,9 +29,10 @@ const FormDetails = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const expenses = {
-      title: enteredText,
-      amount: enteredAmount,
-      date: enteredDate,
+      id: Math.random(),
+      date: new Date(enteredDate),
+      costName: enteredText,
+      price: enteredAmount,
     };
     props.onStoreData(expenses);
     setEnteredAmount("");

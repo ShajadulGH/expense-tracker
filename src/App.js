@@ -1,43 +1,38 @@
+import { useState } from "react";
 import Costs from "./Components/Costs/Costs";
 import Form from "./Components/Form/Form";
-
+const demoCostItem = [
+  {
+    id: 1,
+    date: new Date(),
+    costName: "Mobile",
+    price: 15000,
+  },
+  {
+    id: 2,
+    date: new Date(),
+    costName: "Car",
+    price: 200000,
+  },
+  {
+    id: 3,
+    date: new Date(),
+    costName: "Mouse",
+    price: 2700,
+  },
+];
 const App = () => {
-  const demoCostItem = [
-    {
-      id: 1,
-      date: new Date(),
-      costName: "Mobile",
-      price: 15000,
-    },
-    {
-      id: 2,
-      date: new Date(),
-      costName: "Keyboard",
-      price: 5000,
-    },
-    {
-      id: 3,
-      date: new Date(),
-      costName: "Desktop",
-      price: 50000,
-    },
-    {
-      id: 4,
-      date: new Date(),
-      costName: "Car",
-      price: 1000000,
-    },
-  ];
+  const [costItems, setCostItems] = useState(demoCostItem);
   const receivedData = (receivedData) => {
-    const storedCosts = {
-      ...receivedData,
-    };
-    console.log(storedCosts);
+    setCostItems((prevCost) => {
+      return [receivedData, ...prevCost];
+    });
+    console.log(costItems);
   };
   return (
     <div>
       <Form onStoreCost={receivedData} />
-      <Costs items={demoCostItem} />
+      <Costs items={costItems} />
     </div>
   );
 };
