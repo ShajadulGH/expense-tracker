@@ -9,14 +9,16 @@ const CostItems = (props) => {
   //   console.log(costName);
   // };
   return (
-    <Card className="expense-item">
-      <CostDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.costName}</h2>
-        <div className="expense-item__price">৳{props.price}</div>
-        {/* <button onClick={clickHandler}>Click ME</button> */}
-      </div>
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <CostDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.costName}</h2>
+          <div className="expense-item__price">৳{props.price}</div>
+          {/* <button onClick={clickHandler}>Click ME</button> */}
+        </div>
+      </Card>
+    </li>
   );
 };
 export default CostItems;
