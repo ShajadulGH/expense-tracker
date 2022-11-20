@@ -4,7 +4,7 @@ import CostList from "./CostList";
 import { useState } from "react";
 import CostChart from "./CostChart";
 const Costs = (props) => {
-  const [storedYear, setStoredYear] = useState("");
+  const [storedYear, setStoredYear] = useState("2022");
   const getSelectedYear = (selectedYear) => {
     setStoredYear(selectedYear);
     console.log(storedYear);
