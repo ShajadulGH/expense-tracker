@@ -29,9 +29,9 @@ const FormDetails = (props) => {
   const submitHandler = (event) => {
     event.preventDefault();
     const expenses = {
-      title: enteredText,
-      amount: enteredAmount,
-      date: enteredDate,
+      costName: enteredText,
+      price: enteredAmount,
+      date: new Date(enteredDate),
     };
     props.onStoreData(expenses);
     setEnteredAmount("");

@@ -3,6 +3,7 @@ const CostFilter = (props) => {
   const yearHandler = (e) => {
     // console.log(e.target.value);
     props.getYear(e.target.value);
+    // console.log(e.target.value);
   };
   return (
     <div className="expenses-filter">

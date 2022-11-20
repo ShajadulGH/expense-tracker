@@ -3,15 +3,16 @@ import CostFilter from "./CostFilter";
 import CostList from "./CostList";
 import { useState } from "react";
 const Costs = (props) => {
-  const [storedYear, setStoredYear] = useState("2020");
+  const [storedYear, setStoredYear] = useState("");
   const getSelectedYear = (selectedYear) => {
     setStoredYear(selectedYear);
     console.log(storedYear);
   };
   const filteredCost = props.items.filter(
-    (item) => item.date.getFullYear().toString() === storedYear
+    (item) =>
+      item.date.toLocaleString("en-US", { year: "numeric" }) === storedYear
   );
-
+  console.log(filteredCost);
   return (
     <Card className="cost">
       <CostFilter selected={storedYear} getYear={getSelectedYear} />
