@@ -18,7 +18,7 @@ const FormDetails = (props) => {
     setEnteredText(event.target.value);
   };
 
-  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState();
   const amountHandler = (event) => {
     setEnteredAmount(event.target.value);
   };
